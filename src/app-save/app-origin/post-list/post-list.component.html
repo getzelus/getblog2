@@ -1,0 +1,19 @@
+<h2>Posts :</h2>
+
+<ul class="list-group">
+  <app-post-list-item *ngFor="let post of posts; let i = index"
+  [title]="post.title"
+  [content]="post.content"
+  [loveIts]="post.loveIts"
+  [created_at]="post.created_at"
+  [index]="i"
+  [id]="post.id"
+  ></app-post-list-item>
+</ul>
+
+<button class="btn btn-success"
+              (click)="onResetLikes()">Reset likes</button>
+<button class="btn btn-primary"
+        (click)="onSave()">Enregistrer les posts</button>
+<button class="btn btn-primary"
+        (click)="onFetch()">Récupérer les posts</button>

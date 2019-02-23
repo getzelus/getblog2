@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0}">
+  <p>
+    <a [routerLink]="[id]" class="h3">{{title}}</a>
+    <em class="float-right"> {{ created_at | date: 'short'}}</em>
+  </p>
+  <p>{{ content }}</p>
+
+  <p>
+    <button class="btn btn-success"(click)="onChangeLike(1)">Love it</button>
+    <button class="btn btn-danger"    *ngIf="loveIts > -5" (click)="onChangeLike(-1)">Don't love it</button>
+    <span class="likes">Likes :  {{ loveIts }}</span>
+    <button type="button" class="close" aria-label="Close" (click)="onRemove()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </p>
+
+</li>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav marginleft">
+    <li class="nav-item marginrightlittle" routerLinkActive="active">
+      <a class="nav-link" routerLink="posts">Posts</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="new">Nouveau</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container blogContainer">
+    <h1 class="text-center">Get blog</h1>
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
