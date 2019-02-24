@@ -26,9 +26,16 @@ export class PostService {
       id: 3,
       title: "Angular",
       content: "C'est un merveilleux framework.",
-      loveIts: 2,
+      loveIts: 1,
       created_at:  new Date('February 11, 2019 17:15:00')
-    }
+    },
+    {
+      id: 4,
+      title: "Nouvelle fonctionnalité",
+      content: "On peut supprimer des posts en cliquant sur la petite croix.",
+      loveIts: 2,
+      created_at:  new Date('February 24, 2019 20:44:00')
+    }   
   ];
 
   constructor(private httpClient: HttpClient) { }
