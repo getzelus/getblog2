@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class PostService {
 
+  let url: string = "";
   postsSubject = new Subject<any[]>();
 
   private posts = [
@@ -81,7 +82,7 @@ export class PostService {
 
   savePostsToServer() {
     this.httpClient
-      .put('https://oc-angular-get.firebaseio.com/posts.json', this.posts)
+      .put(url, this.posts)
       .subscribe(
         () => {
           console.log('Enregistrement terminé !');
@@ -93,7 +94,7 @@ export class PostService {
   }
   getPostsFromServer() {
     this.httpClient
-      .get<any[]>('https://oc-angular-get.firebaseio.com/posts.json')
+      .get<any[]>(url)
       .subscribe(
         (response) => {
           this.posts = response;
